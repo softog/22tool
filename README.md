@@ -5,3 +5,18 @@
 
 ## 概述
 22TOOL在线工具箱采用Ant Design React进行开发，使用Next.js SSR渲染。
+
+# 入门
+安装
+```
+npm install
+# or
+yarn
+```
+
+启动
+```
+npm run dev
+# or
+yarn dev
+```

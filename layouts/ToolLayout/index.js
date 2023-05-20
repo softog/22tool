@@ -2,7 +2,6 @@ import React from 'react';
 import BasicLayout from '@/layouts/BasicLayout/index';
 import { Card, Row, Col } from 'antd';
 import { useRouter } from 'next/router';
-import { GithubOutlined } from '@ant-design/icons';
 
 const ToolLayout = ({ children, tool }) => {
   const router = useRouter();
@@ -17,7 +16,6 @@ const ToolLayout = ({ children, tool }) => {
         <Col span={24} >
           <Card>
             {tool.describe}
-            <GithubOutlined />
           </Card>
         </Col>
         <Col span={24} >

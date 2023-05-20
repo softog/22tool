@@ -1,15 +1,20 @@
-import { Layout, Card, Avatar, Button, Popover } from 'antd'
-import { MenuOutlined } from '@ant-design/icons';
+import { Layout, Card, Avatar, Button, Popover, Tooltip, Col, Row } from 'antd'
+import { MenuOutlined, GithubOutlined } from '@ant-design/icons';
 import Logo from '@/components/Logo';
 import Menu from '@/components/Menu';
 import styles from './header.module.css';
 
-
 export default function Header() {
   return (
     <Layout.Header className={styles.header}>
-      <Card className='md-hide'>
-        测试
+      <Card className='md-hide' bodyStyle={{ paddingTop: "18px", paddingBottom: "18px" }}>
+        <Tooltip title="Github">
+          <Button type="text"
+            style={{ float: "right" }}
+            icon={< GithubOutlined style={{ display: "flex", fontSize: 18, justifyContent: "center" }} />}
+            onClick={() => window.open("https://github.com/softog/22tool", "_blank")}
+          />
+        </Tooltip>
       </Card>
       <div className={`${styles.mobile}`}>
         <Logo />
