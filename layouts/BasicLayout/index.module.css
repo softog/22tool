@@ -1,0 +1,44 @@
+/* index.module.css */
+
+.layoutMain {
+  min-height: 100%;
+  background: #f5f5fb !important;
+}
+
+.layoutChild {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #f5f5fb !important;
+}
+
+.drawerIconContainer {
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .drawerIconContainer {
+    display: inline-block;
+  }
+}
+
+.drawerIcon {
+  display: flex;
+  font-size: 24px;
+}
+
+
+
+.content {
+  margin: 16px;
+  background: #f5f5fb;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  text-align: center;
+  padding: 0px !important;
+  margin: 16px;
+}

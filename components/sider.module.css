@@ -1,0 +1,21 @@
+/* siderStyles.module.css */
+.sider {
+    overflow: auto;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: #f5f5fb !important;
+}
+
+.logo {
+    height: 32px;
+    margin: 16px;
+}
+
+.titleText {
+    font-size: 20px;
+    color: #F26D1F;
+    font-weight: bold;
+    margin-left: -3px;
+}

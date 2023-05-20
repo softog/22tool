@@ -1,0 +1,12 @@
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titleText {
+    font-size: 20px;
+    color: #F26D1F;
+    font-weight: bold;
+    margin-left: -3px;
+}
