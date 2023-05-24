@@ -1,5 +1,5 @@
-import url from 'url';
 import { LRUCache } from 'lru-cache';
+import { useRouter } from 'next/router';
 
 export const cache = new LRUCache({
   max: 999, // 缓存最大条目数
@@ -7,7 +7,6 @@ export const cache = new LRUCache({
 });
 
 export default class RequestUtil {
-
   static async get(url) {
     const res = await fetch(url);
     const data = await res.json();
@@ -24,6 +23,12 @@ export default class RequestUtil {
       return this.get(`https://tool.softog.com/api/tool/${firstLevelPathname}`);
     });
     return cachedResult;
+  }
+
+  static getToolName() {
+    const router = useRouter();
+    const currentURL = router.asPath.substring(1);
+    return currentURL;
   }
 
   static cacheRequest(key, dataCallback) {
