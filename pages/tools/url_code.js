@@ -20,6 +20,7 @@ export default function ToolPage(props) {
     const encodedValue = encodeURIComponent(inputValue);
     setOutputValue(encodedValue);
     setOutputDisabled(false);
+    RequestUtil.addToolUseCount(router);
   };
 
   // 点击encode按钮
