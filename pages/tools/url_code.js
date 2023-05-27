@@ -1,13 +1,13 @@
 import ToolLayout from '@/layouts/ToolLayout/index';
 import RequestUtil from '@/utils/RequestUtil';
-
 import React, { useState } from 'react';
-import BasicLayout from '@/layouts/BasicLayout/index';
-import { Card, Row, Col, Input, Divider, Button, message } from 'antd';
+import { useRouter } from 'next/router';
+import { Row, Col, Input, Divider, Button, message } from 'antd';
 const { TextArea } = Input;
 import copy from 'copy-to-clipboard';
 
 export default function ToolPage(props) {
+  const router = useRouter();
   const [inputValue, setInputValue] = useState(''); // 关联输入框1
   const [outputValue, setOutputValue] = useState(''); // 关联输入框2
   const [outputDisabled, setOutputDisabled] = useState(true);
@@ -30,6 +30,7 @@ export default function ToolPage(props) {
     const encodedValue = decodeURIComponent(inputValue);
     setOutputValue(encodedValue);
     setOutputDisabled(false);
+    RequestUtil.addToolUseCount(router);
   };
 
   // 处理结果文本修改

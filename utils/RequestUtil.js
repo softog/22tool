@@ -25,11 +25,20 @@ export default class RequestUtil {
     return cachedResult;
   }
 
-  static getToolName() {
-    const router = useRouter();
+  // 增加工具使用次数
+  static addToolUseCount(router) {
+    const tool = this.getToolName(router)
+    fetch(`https://tool.softog.com/api/tool/${tool}/add_use_count`, {
+      method: 'POST'
+    });
+  }
+
+  static getToolName(router) {
+    //const router = useRouter();
     const currentURL = router.asPath.substring(1);
     return currentURL;
   }
+
 
   static cacheRequest(key, dataCallback) {
     let cacheData = cache.get(key);
