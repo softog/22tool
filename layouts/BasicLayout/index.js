@@ -25,7 +25,8 @@ export default function BasicLayout({ children, title = '', description = '', hi
       <Head>
         <title>{siteTitle}</title>
         {description && <meta name="description" content={description} />}
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimum-scale=1,maximum-scale=1" />
+
       </Head>
       <Layout hasSider className={styles.layoutMain}>
         <Sider />
@@ -46,6 +47,20 @@ export default function BasicLayout({ children, title = '', description = '', hi
           )}
         </Layout>
       </Layout >
+      <div
+        dangerouslySetInnerHTML={{
+          __html: `
+            <script>
+            var _hmt = _hmt || [];
+            (function() {
+              var hm = document.createElement("script");
+              hm.src = "https://hm.baidu.com/hm.js?9db38fb00d3e586bb1e80d4e64e52115";
+              var s = document.getElementsByTagName("script")[0]; 
+              s.parentNode.insertBefore(hm, s);
+            })();
+            </script>`,
+        }}
+      ></div>
     </>
   );
 };
