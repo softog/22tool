@@ -22,7 +22,7 @@ const CategoryPage = ({ category }) => {
 
 export async function getServerSideProps(context) {
   const { en_name } = context.query;
-  const res = await fetch(`https://tool.softog.com/api/category/${en_name}/tool`);
+  const res = await fetch(`https://tool.softog.com/api/category/${en_name}`);
   let data = await res.json();
 
   if (res.status !== 200 || !data || data.code !== 200) {
