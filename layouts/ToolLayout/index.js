@@ -4,18 +4,14 @@ import { Card, Row, Col } from 'antd';
 import { useRouter } from 'next/router';
 
 const ToolLayout = ({ children, tool }) => {
-  const router = useRouter();
-  if (!tool) {
-    //router.push('/404');
-    return null;
-  }
+  const { name = "新建工具", describe = "新建工具描述", explanation_html } = tool || {};
 
   return (
-    <BasicLayout title={tool.name} style={{ flex: 1 }}>
+    <BasicLayout title={name} style={{ flex: 1 }}>
       <Row gutter={[16, 16]}>
         <Col span={24} >
           <Card>
-            {tool.describe}
+            {describe}
           </Card>
         </Col>
         <Col span={24} >
@@ -23,10 +19,10 @@ const ToolLayout = ({ children, tool }) => {
             {children}
           </Card>
         </Col>
-        {tool.explanation_html && (
+        {explanation_html && (
           <Col span={24}>
             <Card>
-              <div dangerouslySetInnerHTML={{ __html: tool.explanation_html }}></div>
+              <div dangerouslySetInnerHTML={{ __html: explanation_html }}></div>
             </Card>
           </Col>
         )}
